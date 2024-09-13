@@ -29,6 +29,11 @@ app.use("/companies", companiesRoutes);
 app.use("/users", usersRoutes);
 app.use("/jobs", jobsRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Backend is running");  // A simple message for the root route
+});
+
+
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
   return next(new NotFoundError());
